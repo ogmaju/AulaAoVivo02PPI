@@ -90,7 +90,7 @@ server.post('/adicionarUsuario', (requisicao, resposta) => {
     const Estado = requisicao.body.Estado;
     const CEP = requisicao.body.CEP;
     listaUsuarios.push({Email, Senha, Endereco, Cidade, Estado, CEP});
-resposta.redirect("/listaUsuarios");
+resposta.redirect("/listarUsuarios");
 
 });
 
@@ -144,7 +144,7 @@ server.get("/listarUsuarios", (requisicao, resposta) => {
     resposta.send(conteudo);
 });
 
-server.listen(porta, host, () => {
-    console.log(`Servidor rodando em http://${host}:${porta}`)
+server.listen(porta, () => {
+    console.log(`Servidor rodando em http://localhost:${porta}`);
 });
 
